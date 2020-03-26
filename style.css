@@ -1,0 +1,112 @@
+body {
+	background-color: white;
+	color: black;
+	font-size: 16px;
+	font-family:Arial, Helvetica, sans-serif;
+	padding: 0px;
+	margin: 0px;
+}
+
+.nav {
+	background-color: cadetblue;
+	color: white;
+}
+
+/*You can enter the parent element and sub element to specify it*/
+.nav ul {
+	margin: 0px;
+	padding: 0px;
+	list-style-type: none;
+	/*This is just a hack to get rid of color&border not aligning when webpage is below 700px*/
+	font-size: 0px;
+}
+
+/*You can also select sub elements of subelements*/
+.nav ul li {
+	padding: 16px;
+	text-align: center;
+	font-size: 1.2rem;
+	border-bottom: 1px solid black;
+	/*You can specify the transition property like so*/
+	transition: background-color 1s;
+}
+
+/*You can select pseudo-elements with a colon, such as below*/
+.nav ul li:hover {
+	background-color: black;
+}
+
+.image-area {
+	background-image:url('images/background.jpg');
+	/*Vertical and horizontal position*/
+	background-position: center center;
+	/*Image size setting. Cover uses all of the available space.*/
+	background-size: cover;
+	padding-top: 200px;
+	padding-bottom: 200px;
+}
+
+/*This is one of the classes used by multiple containers in the html. You define this first so it can be overwritten below if needed*/
+.centered-container {
+	max-width: 1020px;
+	margin: 0px auto;
+	padding: 0px 16px;
+}
+
+.image-text {
+	text-align: center;
+	background-color: cadetblue;
+	padding-bottom: 5px;
+	color: white;
+	/*You cannot have spaces between the value and the rem*/
+	font-size: 2.5rem;
+}
+
+.intro-text {
+	max-width: 1020px;
+	color: gray;
+	font-size: 1.5rem;
+	text-align: center;
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+.single-service {
+	text-align: center;
+	margin-bottom: 32px;
+}
+
+.single-service p {
+	padding: 0px 16px;
+}
+
+img {
+	width: 95%;
+	height: auto;
+}
+
+/*You can create a media query as per below. This does useful things such as add responsive features to a web page*/
+@media screen and (min-width: 700px) {
+	
+	.nav ul {
+		text-align: right;
+	}
+	
+	.nav ul li {
+		display: inline-block;
+		border-bottom: 0px;
+		border-left: 1px solid black;
+		text-align: left;
+	}
+	
+	.single-service {
+		width: 50%;
+		/*Causes elements to float to the left of the next element*/
+		float: left;
+	}
+	
+	img {
+		width: 95%;
+		height: auto;
+	}
+}
